@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # ProjetoPCD_26_27_IscoT
-=======
+
 # IscoT – Message Broker para Domótica
 
 **IscoT** é um sistema distribuído de gestão doméstica (smart home) baseado num *message broker* desenvolvido de raiz em Java. Sensores, decisores e atuadores ligam-se a um servidor central que gere toda a comunicação através de filas de eventos organizadas por tópicos.
