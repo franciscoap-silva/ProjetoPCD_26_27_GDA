@@ -97,8 +97,7 @@ java iscot <IP> <PORT> <AreaDispositivo> <TipoDispositivo>
 
 ## Autores
 
-- _Nome 1 – n.º_
-- _Nome 2 – n.º_
+- Francisco Silva
+- Guilherme Freitas 
 
-Grupo _X_ · Programação Concorrente e Distribuída · 2026/27
->>>>>>> c66a1d470e3828a00ea7298b24e1cf0346012657
+Grupo DA · Programação Concorrente e Distribuída · 2026/27
