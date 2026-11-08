@@ -1,21 +1,17 @@
 package iscot.client;
 
 import java.awt.BorderLayout;
-// import java.awt.GridLayout;
+
 import java.io.IOException;
-// import java.io.ObjectInputStream;
-// import java.io.ObjectOutputStream;
-// import java.net.Socket;
 import java.net.UnknownHostException;
 
-// import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-// import iscot.client.gui.LightIcon;
 import iscot.client.gui.VentilatorIcon;
 import iscot.enums.Areas;
-// import iscot.enums.Type;
+import iscot.enums.OnOffMode;
+import iscot.events.AreaVentilationOrderEvent;
 
 public class Ventilator {
 
@@ -34,9 +30,11 @@ public class Ventilator {
 			System.err.println("Invalid arguments!");
 		}
 		else {
+
 			// TODO connect to server
 			
 			// TODO register with the server
+
 			Areas area=Areas.valueOf(args[2]);
 			
 			JFrame janela = new JFrame("Ventilador em "+area);
@@ -55,12 +53,23 @@ public class Ventilator {
 			janela.pack();
 			janela.setVisible(true);
 			
-			Thread.sleep(5000);
-			ventilator.setAtivo(true);
+			Thread.sleep(3000);
 
 			// TODO: receive and handle messages from server
-			
+
 			// TODO: for first phase: create an appropriate event hardcoded locally and change the GUI accordingly
+
+			AreaVentilationOrderEvent ventilationOrder = new AreaVentilationOrderEvent(Areas.WC, OnOffMode.ON);
+			if (area == ventilationOrder.getArea()){
+				if (ventilationOrder.getState() == OnOffMode.ON){
+					ventilator.setLigado(true);
+					System.out.println("Ventilador : " + area + " - Ligado");
+				} else { ventilator.setLigado(false);
+						System.out.println("Ventilador : " + area + " - Desligado");
+				}
+			}
+			
+			
 		}
 	}
 }

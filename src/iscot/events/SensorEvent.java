@@ -23,7 +23,7 @@ public abstract class SensorEvent extends Event {
 
      @Override
     public String toString() {
-        return String.format(getClass().getSimpleName() + "[eventId=%d, sensorId=%d, area=%s, value=%.1f%%]",
+        return String.format(getClass().getSimpleName() + "[eventId=%d, sensorId=%d, area=%s, value=%.1f]",
                             getId(), getSensorId(), getArea(), getValue());
     }
     
