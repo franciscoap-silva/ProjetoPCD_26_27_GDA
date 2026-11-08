@@ -95,7 +95,7 @@ java -cp bin iscot.client.Ventilator localhost 12345 Kitchen
 
 **O que faz:** inicia a janela do ventilador da cozinha. Os argumentos têm o mesmo significado que no teste anterior.
 
-### Passos e observações
+### Passos e observações 
 
 1. Confirma que aparece uma janela com o título `Ventilador em Kitchen`.
 2. Observa o ícone inicialmente cinzento, que representa o estado desligado.

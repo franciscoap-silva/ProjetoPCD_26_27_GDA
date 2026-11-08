@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class VentilatorIcon extends ComponentState {
-	private int velocidade = 1;
+	// private int velocidade = 1;
 
 	public void setLigado(boolean ligado) {
 	    setAtivo(ligado);

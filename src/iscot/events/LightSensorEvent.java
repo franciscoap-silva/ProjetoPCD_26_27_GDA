@@ -4,8 +4,8 @@ import iscot.enums.Areas;
 
 public class LightSensorEvent extends SensorEvent{
 
-    public LightSensorEvent(int eventId, int sensorId, Areas area, double value) {
-        super(eventId, sensorId, area, value);
+    public LightSensorEvent(int sensorId, Areas area, double value) {
+        super(sensorId, area, value);
     }
 
 }

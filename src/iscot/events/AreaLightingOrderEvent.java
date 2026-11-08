@@ -7,8 +7,8 @@ public class AreaLightingOrderEvent extends HighLevelOrderEvent{
 
     private final OnOffMode state;
 
-    public AreaLightingOrderEvent(int eventId, Areas area, OnOffMode state) {
-        super(eventId, area);
+    public AreaLightingOrderEvent(Areas area, OnOffMode state) {
+        super(area);
         this.state = state;
     }
 
