@@ -2,6 +2,8 @@ package iscot.client.gui;
 
 
 import java.awt.BorderLayout;
+import java.math.BigDecimal;
+import java.util.Hashtable;
 import java.util.function.DoubleConsumer;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -68,9 +70,15 @@ public class SensorControl extends JPanel {
         );
 
         slider = new JSlider(0, numeroPassos, passoInicial);
-        slider.setMajorTickSpacing(
-            Math.max(1, numeroPassos / 4)
-        );
+        int intervaloEtiquetas = Math.max(1, numeroPassos / 4);
+        slider.setMajorTickSpacing(intervaloEtiquetas);
+
+        Hashtable<Integer, JLabel> etiquetas = new Hashtable<>();
+        for (int posicao = 0; posicao <= numeroPassos; posicao += intervaloEtiquetas) {
+            etiquetas.put(posicao, new JLabel(formatarValorEscala(posicao)));
+        }
+        etiquetas.put(numeroPassos, new JLabel(formatarValorEscala(numeroPassos)));
+        slider.setLabelTable(etiquetas);
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
 
@@ -90,6 +98,13 @@ public class SensorControl extends JPanel {
 
         add(slider, BorderLayout.CENTER);
         add(valorLabel, BorderLayout.SOUTH);
+    }
+
+    private String formatarValorEscala(int posicao) {
+        return BigDecimal.valueOf(minimo)
+                .add(BigDecimal.valueOf(passo).multiply(BigDecimal.valueOf(posicao)))
+                .stripTrailingZeros()
+                .toPlainString();
     }
 
     private void atualizarEtiqueta() {

@@ -35,15 +35,15 @@ public class TemperatureSensor {
 			Areas area=Areas.valueOf(args[2]);
 			
 
-			JFrame janela = new JFrame("Humidade em "+area);
+			JFrame janela = new JFrame("Temperatura em "+area);
 			janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 			
 			// Criar os componentes gráficos
 			JPanel painel=new JPanel();
 			painel.setLayout(new BorderLayout());
-			SensorControl sensorControl= new SensorControl( "☀", "Humidade - "+area, "%",
-				    0, 100, 1, 50,
+			SensorControl sensorControl= new SensorControl( "☀", "Temperatura - "+area, "ºC",
+				    -50, 50, 1, 20,
 				    valor -> {
 
 				    	// TODO handle change in sensor
@@ -51,7 +51,7 @@ public class TemperatureSensor {
 						TemperatureSensorEvent event = new TemperatureSensorEvent(10, area, valor);
 				    	System.out.println("Mudou para: \u001B[32m" + valor + "\u001B[0m");
 						System.out.println("New Event: " + event.toString());
-						
+
 				    });
 			painel.add(sensorControl,BorderLayout.CENTER);
 			janela.setContentPane(painel);
