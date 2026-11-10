@@ -1,7 +1,7 @@
 package iscot.client.gui;
 
 import java.awt.*;
-import java.awt.geom.*;
+// import java.awt.geom.*;
 
 import iscot.enums.AirConditioningMode;
 

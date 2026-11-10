@@ -7,8 +7,8 @@ public abstract class SensorEvent extends Event {
     private final int sensorId;
     private final double value;
 
-    public SensorEvent(int eventId, int sensorId, Areas area, double value) {
-        super(eventId, area);
+    public SensorEvent(int sensorId, Areas area, double value) {
+        super(area);
         this.sensorId = sensorId;
         this.value = value;
     }
@@ -19,6 +19,12 @@ public abstract class SensorEvent extends Event {
 
     public double getValue() {
         return value;
+    }
+
+     @Override
+    public String toString() {
+        return String.format(getClass().getSimpleName() + "[eventId=%d, sensorId=%d, area=%s, value=%.1f]",
+                            getId(), getSensorId(), getArea(), getValue());
     }
     
 }

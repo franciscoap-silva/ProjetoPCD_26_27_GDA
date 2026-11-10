@@ -7,8 +7,8 @@ public class RegistrationEvent extends Event {
 
     private final Type type;
 
-    public RegistrationEvent(int eventId, Areas area, Type type) {
-        super(eventId, area);
+    public RegistrationEvent(Areas area, Type type) {
+        super(area);
         this.type = type;
     }
 

@@ -4,8 +4,8 @@ import iscot.enums.Areas;
 
 public abstract class HighLevelOrderEvent extends Event {
 
-    public HighLevelOrderEvent(int eventId, Areas area) {
-        super(eventId, area);
+    public HighLevelOrderEvent(Areas area) {
+        super(area);
     }
     
 }

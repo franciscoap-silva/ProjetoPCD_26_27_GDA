@@ -1,12 +1,15 @@
 package iscot.client;
 
 import java.awt.BorderLayout;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import iscot.client.gui.LightIcon;
+// import iscot.client.gui.LightIcon;
 import iscot.client.gui.SensorControl;
 import iscot.enums.Areas;
-import iscot.enums.Type;
+// import iscot.enums.Type;
+import iscot.events.HumiditySensorEvent;
 
 public class HumiditySensor {
 
@@ -24,9 +27,11 @@ public class HumiditySensor {
 			System.err.println("Invalid arguments!");
 		}
 		else {
+
 			// TODO connect to the server
 
 			// TODO register with the server
+			
 			Areas area=Areas.valueOf(args[2]);
 			
 
@@ -40,8 +45,13 @@ public class HumiditySensor {
 			SensorControl sensorControl= new SensorControl( "☀", "Humidade - "+area, "%",
 				    0, 100, 1, 50,
 				    valor -> {
+
 				    	// TODO handle change in sensor
-				    	System.out.println("Mudou para:"+valor);
+
+						HumiditySensorEvent event = new HumiditySensorEvent(10, area, valor);
+				    	System.out.println("Mudou para: \u001B[32m" + valor + "\u001B[0m");
+						System.out.println("New Event: " + event.toString());
+
 				    });
 			painel.add(sensorControl,BorderLayout.CENTER);
 			janela.setContentPane(painel);

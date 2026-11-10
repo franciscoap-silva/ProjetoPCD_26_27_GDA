@@ -7,8 +7,8 @@ public class AreaIrrigationOrderEvent extends HighLevelOrderEvent{
 
     private final OnOffMode state;
 
-    public AreaIrrigationOrderEvent(int eventId, Areas area, OnOffMode state) {
-        super(eventId, area);
+    public AreaIrrigationOrderEvent(Areas area, OnOffMode state) {
+        super(area);
         this.state = state;
     }
     

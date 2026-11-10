@@ -7,8 +7,8 @@ public class  AreaVentilationOrderEvent extends HighLevelOrderEvent{
 
     private final OnOffMode state;
 
-    public AreaVentilationOrderEvent(int eventId, Areas area, OnOffMode state) {
-        super(eventId, area);
+    public AreaVentilationOrderEvent(Areas area, OnOffMode state) {
+        super(area);
         this.state = state;
     }
 

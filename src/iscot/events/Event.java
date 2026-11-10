@@ -6,9 +6,10 @@ public abstract class Event {
 
     private final int eventId;
     private final Areas area;
+    private static int countId = 1;
 
-    public Event(int eventId, Areas area) {
-        this.eventId = eventId;
+    public Event(Areas area) {
+        this.eventId = countId++;
         this.area = area;
     }
 
@@ -19,6 +20,5 @@ public abstract class Event {
     public Areas getArea() {
         return area;
     }
-
     
 }

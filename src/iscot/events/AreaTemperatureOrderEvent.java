@@ -7,8 +7,8 @@ public class AreaTemperatureOrderEvent extends HighLevelOrderEvent{
 
     private final AirConditioningMode mode;
 
-    public AreaTemperatureOrderEvent(int eventId, Areas area, AirConditioningMode mode) {
-        super(eventId, area);
+    public AreaTemperatureOrderEvent(Areas area, AirConditioningMode mode) {
+        super(area);
         this.mode = mode;
     }
 
